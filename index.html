@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALLNIGHTKEV · Tech House · Miami · Booking</title>
+<meta name="description" content="ALLNIGHTKEV: Miami tech house DJ/producer. Club Space, LIV, III Points, EDC Orlando. #3 on Beatport. Booking info, sets, and press kit.">
+<meta property="og:title" content="ALLNIGHTKEV · Tech House · Miami">
+<meta property="og:description" content="Club Space · LIV · III Points · EDC Orlando · #3 Beatport · Supported by Jamie Jones, PAWSA, Michael Bibi">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0b0a;
+    --panel: #17130f;
+    --line: #2a231d;
+    --text: #f4efe9;
+    --muted: #a89c90;
+    --accent: #ff7a45;
+    --accent-2: #ffb08a;
+    --display: "League Spartan", "Arial Black", sans-serif;
+    --body: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  h2 { font: 800 clamp(28px, 4vw, 40px)/1 var(--display); text-transform: uppercase; letter-spacing: .01em; margin: 0 0 28px; }
+  h2 small { display: block; font: 600 12px/1 var(--body); letter-spacing: .18em; color: var(--accent); margin-bottom: 12px; }
+  section { padding: 88px 0; border-top: 1px solid var(--line); }
+
+  /* nav */
+  nav { position: fixed; inset: 0 0 auto; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+        padding: 14px 24px; background: #0d0b0ab3; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid #ffffff10; }
+  nav .logo { font: 900 20px/1 var(--display); letter-spacing: .02em; text-decoration: none; }
+  nav .links { display: flex; gap: 22px; font-size: 14px; }
+  nav .links a { text-decoration: none; color: var(--muted); }
+  nav .links a:hover { color: var(--text); }
+  @media (max-width: 700px) { nav .links a:not(.cta-sm) { display: none; } }
+  .cta-sm { color: var(--bg) !important; background: var(--accent); padding: 8px 14px; border-radius: 999px; font-weight: 600; }
+
+  /* hero */
+  .hero { position: relative; min-height: min(92vh, 820px); display: flex; align-items: flex-end; overflow: hidden; }
+  .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+  .hero::after { content: ""; position: absolute; inset: 0;
+                 background: linear-gradient(180deg, #0d0b0a00 30%, #0d0b0acc 70%, var(--bg) 100%); }
+  .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; width: 100%; }
+  .tag { display: inline-block; font: 600 12px/1 var(--body); letter-spacing: .18em; text-transform: uppercase;
+         color: var(--accent-2); border: 1px solid #ff7a4566; padding: 8px 12px; border-radius: 999px; background: #0d0b0a99; }
+  .hero h1 { font: 900 clamp(56px, 11vw, 140px)/.9 var(--display); margin: 18px 0 16px; color: var(--accent); letter-spacing: -.01em; }
+  .hero p.lede { max-width: 620px; font-size: clamp(17px, 2vw, 20px); color: #e9e0d6; margin: 0 0 28px; }
+  @media (min-width: 900px) {
+    .hero img { left: auto; width: 60%; object-position: center 20%; }
+    .hero::after { background: linear-gradient(90deg, var(--bg) 38%, #0d0b0a00 62%),
+                               linear-gradient(180deg, #0d0b0a00 70%, var(--bg) 100%); }
+    .hero { align-items: center; }
+    .hero .wrap { padding: 120px 24px 80px; }
+    .hero h1 { font-size: clamp(64px, 8.4vw, 116px); }
+    .hero p.lede { max-width: 500px; }
+  }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 999px; font-weight: 600;
+         text-decoration: none; border: 1px solid var(--text); transition: transform .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: -1px; }
+  .stat { padding: 26px 22px; background: var(--panel); border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat b { display: block; font: 900 clamp(28px, 3.4vw, 40px)/1 var(--display); color: var(--accent); margin-bottom: 8px; }
+  .stat span { color: var(--muted); font-size: 14px; }
+  @media (max-width: 800px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(2) { border-right: 0; }
+                              .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+
+  /* played / support */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  @media (max-width: 800px) { .two { grid-template-columns: 1fr; gap: 56px; } }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); font-weight: 500; font-size: 15px; }
+  .chip.big { border-color: #ff7a4580; color: var(--accent-2); }
+  .chip em { font-style: normal; color: var(--muted); font-size: 13px; margin-left: 6px; }
+
+  /* listen */
+  .listen { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+  @media (max-width: 900px) { .listen { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  .card h3 { margin: 0 0 12px; font: 800 18px/1.2 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+  .card + .card { margin-top: 24px; }
+  iframe { display: block; width: 100%; border: 0; border-radius: 10px; }
+  .releases { list-style: none; padding: 0; margin: 0; }
+  .releases li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .releases li:last-child { border-bottom: 0; }
+  .releases a { text-decoration: none; font-weight: 600; }
+  .releases a:hover { color: var(--accent); }
+  .releases span { color: var(--muted); white-space: nowrap; }
+  .releases .badge { color: var(--bg); background: var(--accent); border-radius: 6px; padding: 2px 7px; font-size: 12px; font-weight: 700; margin-left: 8px; }
+
+  /* bio */
+  .bio { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+  .bio img { width: 100%; border-radius: 16px; display: block; }
+  .bio p { color: #ddd3c8; margin: 0 0 16px; font-size: 17px; }
+  @media (max-width: 800px) { .bio { grid-template-columns: 1fr; } }
+
+  /* booking */
+  .booking { text-align: center; padding: 110px 0; background: radial-gradient(ellipse at center, #ff7a4522, transparent 60%); }
+  .booking h2 { font-size: clamp(40px, 7vw, 80px); }
+  .booking p { color: var(--muted); max-width: 520px; margin: 0 auto 30px; }
+  .contacts { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; font-size: 15px; }
+  .contacts div span { display: block; color: var(--muted); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 4px; }
+  .contacts a { text-decoration: none; font-weight: 600; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 0 48px; border-top: 1px solid var(--line); }
+  footer a { margin: 0 10px; text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">ALLNIGHTKEV</a>
+  <div class="links">
+    <a href="#played">Played</a>
+    <a href="#listen">Listen</a>
+    <a href="#bio">Bio</a>
+    <a class="cta-sm" href="#booking">Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="assets/hero.jpg" alt="ALLNIGHTKEV">
+  <div class="wrap">
+    <span class="tag">Tech House · Miami</span>
+    <h1>ALLNIGHTKEV</h1>
+    <p class="lede">Fast, groove-driven, peak-time tech house. Club Space, LIV, III Points and EDC Orlando. Latest release peaked at #3 on Beatport.</p>
+    <div class="btns">
+      <a class="btn primary" href="#booking">Check dates</a>
+      <a class="btn" href="#listen">▶&nbsp; Hear a set</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>#3</b><span>Beatport chart peak</span></div>
+    <div class="stat"><b>400K+</b><span>streams, last 12 months</span></div>
+    <div class="stat"><b>EDC</b><span>Orlando 2026 + official after-party</span></div>
+    <div class="stat"><b>Fresh Finds</b><span>Official Spotify artist · Tech House Operator</span></div>
+  </div>
+</div>
+
+<section id="played">
+  <div class="wrap two">
+    <div>
+      <h2><small>Notable shows &amp; venues</small>Played</h2>
+      <div class="chips">
+        <span class="chip big">Club Space <em>Miami</em></span>
+        <span class="chip big">EDC Orlando</span>
+        <span class="chip big">III Points</span>
+        <span class="chip big">LIV <em>Miami</em></span>
+        <span class="chip big">Spy Bar <em>Chicago · sold-out headline</em></span>
+        <span class="chip">Jolene Sound Room <em>Miami</em></span>
+        <span class="chip">Spotlight <em>LA</em></span>
+        <span class="chip">RIPNDIP after-party <em>LA</em></span>
+        <span class="chip">ARC after-party <em>w/ Tres Mortimer</em></span>
+        <span class="chip">House Party</span>
+        <span class="chip">Toejam Backlot</span>
+        <span class="chip">Mexico City</span>
+      </div>
+    </div>
+    <div>
+      <h2><small>Tracks &amp; IDs played by</small>Supported by</h2>
+      <div class="chips">
+        <span class="chip big">Jamie Jones</span>
+        <span class="chip big">PAWSA</span>
+        <span class="chip big">Michael Bibi</span>
+        <span class="chip big">Josh Baker</span>
+        <span class="chip big">Chasewest</span>
+        <span class="chip big">BLOND:ISH</span>
+        <span class="chip">Drake</span>
+        <span class="chip">Tres Mortimer</span>
+        <span class="chip">AYYBO</span>
+        <span class="chip">Locklead</span>
+        <span class="chip">Slugg</span>
+        <span class="chip">Lousy Lover</span>
+        <span class="chip">Victor Alves</span>
+        <span class="chip">Tyson O'Brien</span>
+        <span class="chip">Natalia Roth</span>
+        <span class="chip">Danyelino</span>
+        <span class="chip">Kinahau</span>
+        <span class="chip">OCON</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="listen">
+  <div class="wrap">
+    <h2><small>Sets &amp; releases</small>Listen</h2>
+    <div class="listen">
+      <div>
+        <div class="card">
+          <h3>Live @ Jolene Sound Room, Miami</h3>
+          <iframe height="166" loading="lazy" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/allnightk/allnightkev-jolene-july-11&color=%23ff7a45&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"></iframe>
+        </div>
+        <div class="card">
+          <h3>Sh*t Out of Luck EP · Unlucky Records</h3>
+          <iframe height="300" loading="lazy" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/allnightk/sets/shit-out-of-luck-ep&color=%23ff7a45&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"></iframe>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Releases</h3>
+          <ul class="releases">
+            <li><a href="https://www.beatport.com/release/sht-out-of-luck/7216125" target="_blank" rel="noopener">Sh*t Out of Luck EP<span class="badge">#3 Beatport</span></a><span>Unlucky Records</span></li>
+            <li><a href="https://soundcloud.com/allnightk/daddys-got-a-gun-allnight-lo-g" target="_blank" rel="noopener">Daddy's Got a Gun (w/ Lo-G)</a><span>Unlucky Records</span></li>
+            <li><a href="https://soundcloud.com/allnightk/let-it-happen-allnight" target="_blank" rel="noopener">Let It Happen</a><span>Unlucky Records</span></li>
+            <li><a href="https://soundcloud.com/allnightk/sets/kevlo-ep" target="_blank" rel="noopener">KEVLO EP</a><span>SoundCloud</span></li>
+            <li><a href="https://open.spotify.com/artist/0s8cHQ7qsebgXl9G5QvwOK" target="_blank" rel="noopener">Testing EP · Bassline · Percussed Vol.1</a><span>Percussed Records</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <iframe height="352" loading="lazy" allow="encrypted-media"
+            src="https://open.spotify.com/embed/artist/0s8cHQ7qsebgXl9G5QvwOK?utm_source=generator&theme=0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bio">
+  <div class="wrap bio">
+    <img src="assets/booth.jpg" alt="ALLNIGHTKEV in the booth">
+    <div>
+      <h2><small>About</small>Bio</h2>
+      <p>ALLNIGHTKEV is a 27-year-old DJ and producer from Miami making tight, high-energy tech house built for clubs and peak-time crowds. In the last few years he has become one of the city's most active new artists, playing Club Space, Spy Bar, LIV and Jolene Sound Room.</p>
+      <p>His releases keep pulling strong numbers, with unreleased IDs played by Jamie Jones, PAWSA and Michael Bibi, and a recent collaboration with GORDO. Known for fast, rhythmic sets and clean, groove-driven production, he is building a name as one of Miami's next breakout artists.</p>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="booking">
+  <div class="wrap">
+    <h2><small>Booking</small>Bring the night</h2>
+    <p>Available for club nights, after-hours, festivals, rooftops and day parties across the US and Mexico. Miami-based; travel-ready.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn primary" href="mailto:allnightkev@gmail.com?subject=Booking%20inquiry%20-%20ALLNIGHTKEV">Email for dates &amp; rates</a>
+      <a class="btn" href="https://www.dropbox.com/scl/fo/xbxhefswbodxflct23eeo/AIXQbS2cbVXHtmb89Y4IE1s?rlkey=dlzghlliav575jadmtw0bqimb&dl=0" target="_blank" rel="noopener">Press photos</a>
+      <a class="btn" href="assets/ALLNIGHTKEV-presskit.pdf" target="_blank" rel="noopener">Press kit PDF</a>
+    </div>
+    <div class="contacts">
+      <div><span>Booking</span><a href="mailto:allnightkev@gmail.com">allnightkev@gmail.com</a></div>
+      <div><span>Instagram</span><a href="https://www.instagram.com/allnightkev/" target="_blank" rel="noopener">@allnightkev</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.instagram.com/allnightkev/" target="_blank" rel="noopener">Instagram</a>
+  <a href="https://soundcloud.com/allnightk" target="_blank" rel="noopener">SoundCloud</a>
+  <a href="https://open.spotify.com/artist/0s8cHQ7qsebgXl9G5QvwOK" target="_blank" rel="noopener">Spotify</a>
+  <a href="https://www.beatport.com/release/sht-out-of-luck/7216125" target="_blank" rel="noopener">Beatport</a>
+  <p>© ALLNIGHTKEV · Miami, FL</p>
+</footer>
+
+</body>
+</html>
