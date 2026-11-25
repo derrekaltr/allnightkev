@@ -77,6 +77,18 @@
   @media (max-width: 800px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(2) { border-right: 0; }
                               .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
 
+  /* latest */
+  .latest { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .latest { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .latest { grid-template-columns: 1fr; } }
+  .news { display: block; text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+          padding: 22px; transition: border-color .15s, transform .15s; }
+  .news:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .news .k { font: 600 11px/1 var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+  .news h3 { font: 800 22px/1.1 var(--display); text-transform: uppercase; margin: 12px 0 8px; }
+  .news p { margin: 0; color: var(--muted); font-size: 14px; }
+  .news .go { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--accent-2); }
+
   /* played / support */
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
   @media (max-width: 800px) { .two { grid-template-columns: 1fr; gap: 56px; } }
@@ -123,6 +135,7 @@
 <nav>
   <a class="logo" href="#">ALLNIGHTKEV</a>
   <div class="links">
+    <a href="#latest">Latest</a>
     <a href="#played">Played</a>
     <a href="#listen">Listen</a>
     <a href="#bio">Bio</a>
@@ -135,7 +148,7 @@
   <div class="wrap">
     <span class="tag">Tech House · Miami</span>
     <h1>ALLNIGHTKEV</h1>
-    <p class="lede">Fast, groove-driven, peak-time tech house. Club Space, LIV, III Points and EDC Orlando. Latest release peaked at #3 on Beatport.</p>
+    <p class="lede">Fast, groove-driven, peak-time tech house. New track with GORDO, track support from Drake, and fresh off EDC Orlando. Latest release peaked at #3 on Beatport.</p>
     <div class="btns">
       <a class="btn primary" href="#booking">Book ALLNIGHTKEV</a>
       <a class="btn" href="#listen">▶&nbsp; Hear a set</a>
@@ -151,6 +164,26 @@
     <div class="stat"><b>Fresh Finds</b><span>Official Spotify artist · Tech House Operator</span></div>
   </div>
 </div>
+
+<section id="latest">
+  <div class="wrap">
+    <h2><small>What's new</small>Latest</h2>
+    <div class="latest">
+      <a class="news" href="https://www.instagram.com/allnightkev/reel/DdE1STDpD7t/" target="_blank" rel="noopener">
+        <span class="k">Collab</span><h3>New track with GORDO</h3>
+        <p>ALLNIGHTKEV and GORDO have finished a new track together.</p><span class="go">Watch the clip →</span></a>
+      <a class="news" href="https://www.instagram.com/reel/DdW8vo7pcty/" target="_blank" rel="noopener">
+        <span class="k">Support</span><h3>Played by Drake</h3>
+        <p>Recent track support from Drake.</p><span class="go">Watch the clip →</span></a>
+      <a class="news" href="https://soundcloud.com/allnightk/sets/kevlo-ep" target="_blank" rel="noopener">
+        <span class="k">Release</span><h3>KEVLO EP</h3>
+        <p>His latest EP, out now on SoundCloud.</p><span class="go">Listen →</span></a>
+      <a class="news" href="https://www.instagram.com/p/DdURfJ4CYTG/" target="_blank" rel="noopener">
+        <span class="k">Shows</span><h3>EDC Orlando + after-party</h3>
+        <p>Plus Spotlight LA, Mexico City, and the ARC after-party with Tres Mortimer.</p><span class="go">See the ARC set →</span></a>
+    </div>
+  </div>
+</section>
 
 <section id="played">
   <div class="wrap two">
@@ -174,13 +207,13 @@
     <div>
       <h2><small>Tracks &amp; IDs played by</small>Supported by</h2>
       <div class="chips">
+        <span class="chip big">Drake</span>
         <span class="chip big">Jamie Jones</span>
         <span class="chip big">PAWSA</span>
         <span class="chip big">Michael Bibi</span>
         <span class="chip big">Josh Baker</span>
         <span class="chip big">Chasewest</span>
         <span class="chip big">BLOND:ISH</span>
-        <span class="chip">Drake</span>
         <span class="chip">Tres Mortimer</span>
         <span class="chip">AYYBO</span>
         <span class="chip">Locklead</span>
@@ -217,10 +250,10 @@
         <div class="card">
           <h3>Releases</h3>
           <ul class="releases">
+            <li><a href="https://soundcloud.com/allnightk/sets/kevlo-ep" target="_blank" rel="noopener">KEVLO EP<span class="badge">Latest</span></a><span>SoundCloud</span></li>
             <li><a href="https://www.beatport.com/release/sht-out-of-luck/7216125" target="_blank" rel="noopener">Sh*t Out of Luck EP<span class="badge">#3 Beatport</span></a><span>Unlucky Records</span></li>
             <li><a href="https://soundcloud.com/allnightk/daddys-got-a-gun-allnight-lo-g" target="_blank" rel="noopener">Daddy's Got a Gun (w/ Lo-G)</a><span>Unlucky Records</span></li>
             <li><a href="https://soundcloud.com/allnightk/let-it-happen-allnight" target="_blank" rel="noopener">Let It Happen</a><span>Unlucky Records</span></li>
-            <li><a href="https://soundcloud.com/allnightk/sets/kevlo-ep" target="_blank" rel="noopener">KEVLO EP</a><span>SoundCloud</span></li>
             <li><a href="https://open.spotify.com/artist/0s8cHQ7qsebgXl9G5QvwOK" target="_blank" rel="noopener">Testing EP · Bassline · Percussed Vol.1</a><span>Percussed Records</span></li>
           </ul>
         </div>
@@ -239,7 +272,7 @@
     <div>
       <h2><small>About</small>Bio</h2>
       <p>ALLNIGHTKEV is a 27-year-old DJ and producer from Miami making tight, high-energy tech house built for clubs and peak-time crowds. In the last few years he has become one of the city's most active new artists, playing Club Space, Spy Bar, LIV and Jolene Sound Room.</p>
-      <p>His releases keep pulling strong numbers, with unreleased IDs played by Jamie Jones, PAWSA and Michael Bibi, and a recent collaboration with GORDO. Known for fast, rhythmic sets and clean, groove-driven production, he is building a name as one of Miami's next breakout artists.</p>
+      <p>He has a new track with GORDO, track support from Drake, and unreleased IDs played by Jamie Jones, PAWSA and Michael Bibi. His latest release peaked at #3 on Beatport, and he just played EDC Orlando and its official after-party. Known for fast, rhythmic sets and clean, groove-driven production, he is building a name as one of Miami's next breakout artists.</p>
     </div>
   </div>
 </section>
